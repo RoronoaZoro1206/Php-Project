@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup & Login</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="button-box">
+                <button id="signupBtn" class="toggle-btn active" onclick="showSignup()">Signup</button>
+                <button id="loginBtn" class="toggle-btn" onclick="showLogin()">Login</button>
+            </div>
+
+            <!-- Signup Form -->
+            <form id="signupForm">
+                <h2>Signup</h2>
+                <input type="email" id="signupEmail" placeholder="Email Address" required>
+                
+                <div class="password-container">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword('signupPassword')">👁️</span>
+                </div>
+
+                <div class="password-container">
+                    <input type="password" id="signupConfirm" placeholder="Confirm Password" required>
+                    <span class="toggle-password" onclick="togglePassword('signupConfirm')">👁️</span>
+                </div>
+                
+                <button type="submit">Signup</button>
+                <p id="signupMessage"></p>
+                
+                <p class="switch-form">Already a member? <a href="#" onclick="showLogin()">Login now</a></p>
+            </form>
+
+            <!-- Login Form -->
+            <form id="loginForm" style="display: none;">
+                <h2>Login</h2>
+                <input type="email" id="loginEmail" placeholder="Email Address" required>
+                
+                <div class="password-container">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword('loginPassword')">👁️</span>
+                </div>
+
+                <button type="button" onclick="loginUser()">Login</button>
+                <p id="loginMessage"></p>
+
+                <p class="switch-form">Not a member? <a href="#" onclick="showSignup()">Sign up now</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
