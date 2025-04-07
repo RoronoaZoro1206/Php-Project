@@ -175,10 +175,9 @@ nav ul li:hover {
 
 /* Nav links */
 nav ul li a {
-    flex-wrap: nowrap;
     color: #ffffff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1; 
     position: relative;
     display: inline-block;
