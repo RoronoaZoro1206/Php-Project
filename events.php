@@ -61,11 +61,11 @@ if (!isset($_SESSION["user"])) {
         <nav>
             <!-- Logo of Cebu City Government -->
             <div class="logo-wrapper">
-                <a href="landing_page.html">
+                <a href="landing_page.php">
                     <!-- Cebu City Icon -->
                     <img src="Images/Cebu City Icon.png" class="logo2 hidden" alt="Cebu City Header Logo">
                 </a>
-                <a href="landing_page.html">
+                <a href="landing_page.php">
                     <!-- Cebu City Header -->
                     <img src="Images/Cebu City Header.png" class="logo hidden" alt="Header Logo">
                 </a>    
