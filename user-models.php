@@ -7,7 +7,7 @@ function get_user_username(object $pdo, string $username) {
     $query = "SELECT * FROM users WHERE user_username = :username;";
     $statement = $pdo->prepare($query);
 
-    $statement->bindparam(":username", $username);
+    $statement->bindParam(":username", $username);
     $statement->execute();
 
     $result = $statement->fetch(PDO::FETCH_ASSOC); 
@@ -20,7 +20,7 @@ function get_user_email(object $pdo, string $email) {
     $query = "SELECT * FROM users WHERE user_email = :email;";
     $statement = $pdo->prepare($query);
 
-    $statement->bindparam(":email", $email);
+    $statement->bindParam(":email", $email);
     $statement->execute();
 
     $result = $statement->fetch(PDO::FETCH_ASSOC); 
@@ -49,7 +49,4 @@ function create_user(object $pdo, string $username, string $email, string $passw
     } catch (PDOException $e) {
         die("Failed to insert user: " . $e->getMessage());
     }
-    
-
-
 }
