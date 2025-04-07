@@ -113,8 +113,8 @@ if (!isset($_SESSION["user"])) {
 
                     <!-- Buttons -->
                     <div class="btn-box hidden">
-                        <a href="about-us.html">About Us</a>
-                        <a href="contact-us.html">Contact Us</a>
+                        <a href="about-us.php">About Us</a>
+                        <a href="contact-us.php">Contact Us</a>
                     </div>
                 </div>
 
