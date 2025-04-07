@@ -82,16 +82,16 @@ if (!isset($_SESSION["user"])) {
                     <!-- Navigation Links -->
                     <ul id="nav-links">
                         <li class="hidden">
-                            <a href="landing_page.html">Home</a>
+                            <a href="landing_page.php">Home</a>
                         </li>
                         <li class="hidden3">
-                            <a href="services.html">Services</a>
+                            <a href="services.php">Services</a>
                         </li>
                         <li class="hidden3">
-                            <a href="transparency.html">Transparency and Governance</a>
+                            <a href="transparency.php">Transparency and Governance</a>
                         </li>
-                        <li class="hidden3">
-                            <a href="events.html">Events and Announcements</a>
+                        <li class="hidden2">
+                            <a href="events.php">Events and Announcements</a>
                         </li>
                         <li class="hidden2">
                             <a href="logout.php" class="logout-button">Logout</a>
