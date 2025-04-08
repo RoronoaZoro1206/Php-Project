@@ -141,7 +141,7 @@ if (!isset($_SESSION["user"])) {
     <div class="container" id="carousel-section">
         <!-- Title Section for the Carousel -->
         <div class="carousel-title hidden2">
-            <h2>Cebu City Government Activities and Assistance</h2>
+            <h2>Cebu City News and Announcements</h2>
         </div>
     
         <!-- Bootstrap Carousel Component -->
@@ -201,6 +201,51 @@ if (!isset($_SESSION["user"])) {
                     <div class="carousel-caption d-md-block">
                         <h5>Malaysia to help Cebu City government in its infrastructure projects</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/623651/malaysia-to-help-cebu-city-government-in-its-infrastructure-projects" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Seventh Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/charter day city hall.jpg" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>P35k charter day gift for City Hall workers: Bonus awaits Comelec nod</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434401/p35k-charter-day-gift-city-hall-workers-bonus-awaits-comelec-nod" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Eight Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Cashless payment at City Hall soon.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Cashless payment at City Hall soon</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434383/cashless-payment-city-hall-soon" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Ninth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Comelec bars Serge Osmeña.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>From seeking public office: Comelec bars Serge Osmeña</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433945/seeking-public-office-comelec-bars-serge-osmea" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Tenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Fire hits Inayawan anew, 200 homeless.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Fire hits Inayawan anew, 200 homeless</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433939/fire-hits-inayawan-anew-200-homeless" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Eleventh Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Residents with water problems to get containers.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Residents with water problems to get containers</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434377/residents-water-problems-get-containers" target="_blank">Read More</a>
                     </div>
                 </div>
 
