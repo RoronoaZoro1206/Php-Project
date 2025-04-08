@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 
 if (!isset($_SESSION["user"])) {
@@ -246,6 +248,24 @@ if (!isset($_SESSION["user"])) {
                     <div class="carousel-caption d-md-block">
                         <h5>Residents with water problems to get containers</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434377/residents-water-problems-get-containers" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Twelfth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Pia slams PhilHealth 18 percent hospital coverage.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Pia slams PhilHealth 18 percent hospital coverage</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433936/pia-slams-philhealth-18-percent-hospital-coverage" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Thirteenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Pia slams PhilHealth 18 percent hospital coverage.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Pia slams PhilHealth 18 percent hospital coverage</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433936/pia-slams-philhealth-18-percent-hospital-coverage" target="_blank">Read More</a>
                     </div>
                 </div>
 
