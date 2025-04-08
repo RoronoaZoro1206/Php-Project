@@ -53,13 +53,19 @@
           <span></span>
           <label>Confirm Password</label>
         </div>
-    
+        
+        <input type="hidden" name="timezone" id="timezone">
+
         <input type="submit" value="Register">
         <div class="signup_link">
           Already have an account? <a href="login.php">Login</a>
         </div>
       </form>
     </div>
+
+    <script>
+      document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    </script>
 
   </body>
 </html>

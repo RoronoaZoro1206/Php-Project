@@ -28,9 +28,10 @@ function get_user_email(object $pdo, string $email) {
     return $result;
 }
 
-function create_user(object $pdo, string $username, string $email, string $password) {
+function create_user(object $pdo, string $username, string $email, string $password, string $timezone, string $user_created) {
 
-    $query = "INSERT INTO users (user_username, user_email, user_pwd) VALUES (:username, :email, :pwd);";
+    $query = "INSERT INTO users (user_username, user_email, user_pwd, user_timezone, user_created)
+              VALUES (:username, :email, :pwd, :timezone, :created);";
 
     $statement = $pdo->prepare($query);
 
@@ -43,6 +44,8 @@ function create_user(object $pdo, string $username, string $email, string $passw
     $statement->bindParam(":username", $username);
     $statement->bindParam(":email", $email);
     $statement->bindParam(":pwd", $hashed_password);
+    $statement->bindParam(":timezone", $timezone);
+    $statement->bindParam(":created", $user_created);
 
     try {
         $statement->execute();
