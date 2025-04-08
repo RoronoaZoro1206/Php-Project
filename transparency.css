@@ -382,6 +382,13 @@ footer a:hover {
     transform: scale(1.2); 
 }
 
+
+footer .email-id a,
+footer h6 a {
+    color: white !important;
+    text-decoration: none;
+}
+
 /* Row styling for flexible layout */
 .row {
     width: 85%;

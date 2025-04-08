@@ -399,8 +399,6 @@ h1, h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
 /* Footer styling */
 footer {
     width: 100%;
@@ -423,6 +421,12 @@ footer a {
 /* Footer link hover effect */
 footer a:hover {
     transform: scale(1.2); 
+}
+
+footer .email-id a,
+footer h6 a {
+    color: white !important;
+    text-decoration: none;
 }
 
 /* Row styling for flexible layout */

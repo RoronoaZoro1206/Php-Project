@@ -596,19 +596,6 @@ h3 {
     text-align: justify;
 }
 
-
-/* Footer styling */
-footer {
-    width: 100%;
-    position: relative;
-    background: linear-gradient(to right, #00093c, #2d0b00);
-    color: #fff;
-    padding: 60px 0 30px;
-    border-top-left-radius: 125px;
-    font-size: 13px;
-    line-height: 20px;
-    margin-top: 60px;
-}
 /* Hidden class for horizontal animation from left*/
 .hidden {
     opacity: 0;
@@ -640,6 +627,20 @@ footer {
     transform: translateX(0);
     transition: all 1.2s ease;
 }
+
+/* Footer styling */
+footer {
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    color: #fff;
+    padding: 60px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 60px;
+}
+
 /* Footer hyperlink for hover*/
 footer a {
     transition: transform 0.3s ease;
@@ -649,6 +650,12 @@ footer a {
 /* Footer link hover effect */
 footer a:hover {
     transform: scale(1.2); 
+}
+
+footer .email-id a,
+footer h6 a {
+    color: white !important;
+    text-decoration: none;
 }
 
 /* Row styling for flexible layout */

@@ -312,9 +312,13 @@ if (!isset($_SESSION["user"])) {
                 <p class="hidden3">Dr Jose P. Rizal St., Santo Niño</p>
                 <p class="hidden3">6000, Cebu City, Cebu, Philippines</p>
                 <!-- Email -->
-                <p class="email-id hidden3">cityadmin@cebucity.gov.ph</p>
+                <p class="email-id hidden3">
+                    <a href="mailto:cityadmin@cebucity.gov.ph">cityadmin@cebucity.gov.ph</a>
+                </p>
                 <!-- Phone Number -->
-                <h6 class="fw-bold fs-7 hidden3">(+632) 411 0100</h6>
+                <h6 class="fw-bold fs-7 hidden3">
+                    <a href="tel:+6324110100">(+632) 411 0100</a>
+                </h6>
             </div>
 
             <!-- Column 3: Quick Links -->
