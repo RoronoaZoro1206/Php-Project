@@ -190,7 +190,7 @@ if (!isset($_SESSION["user"])) {
     
                 <!-- Fifth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Solo parents cash aid.png" class="d-block w-100 c-img" alt="Solo parents cash aid">
+                    <img src="Images/Solo parents cash aid.png" class="d-block w-100 c-img" alt=">Cebu city solo parents cash aid">
                     <div class="carousel-caption d-md-block">
                         <h5>Cebu city solo parents cash aid</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebucity.news/2022/12/14/council-to-city-implement-cash-aid-for-solo-parents/7" target="_blank">Read More</a>
@@ -199,7 +199,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Sixth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Malaysia helps cebu city government.jpeg" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/Malaysia helps cebu city government.jpeg" class="d-block w-100 c-img" alt="Malaysia to help Cebu City government in its infrastructure projects">
                     <div class="carousel-caption d-md-block">
                         <h5>Malaysia to help Cebu City government in its infrastructure projects</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/623651/malaysia-to-help-cebu-city-government-in-its-infrastructure-projects" target="_blank">Read More</a>
@@ -208,7 +208,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Seventh Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/charter day city hall.jpg" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/charter day city hall.jpg" class="d-block w-100 c-img" alt="P35k charter day gift for City Hall workers: Bonus awaits Comelec nod">
                     <div class="carousel-caption d-md-block">
                         <h5>P35k charter day gift for City Hall workers: Bonus awaits Comelec nod</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434401/p35k-charter-day-gift-city-hall-workers-bonus-awaits-comelec-nod" target="_blank">Read More</a>
@@ -217,7 +217,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Eight Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Cashless payment at City Hall soon.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/Cashless payment at City Hall soon.png" class="d-block w-100 c-img" alt="Cashless payment at City Hall soon">
                     <div class="carousel-caption d-md-block">
                         <h5>Cashless payment at City Hall soon</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434383/cashless-payment-city-hall-soon" target="_blank">Read More</a>
@@ -226,7 +226,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Ninth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Comelec bars Serge Osmeña.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/Comelec bars Serge Osmeña.png" class="d-block w-100 c-img" alt="From seeking public office: Comelec bars Serge Osmeña">
                     <div class="carousel-caption d-md-block">
                         <h5>From seeking public office: Comelec bars Serge Osmeña</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433945/seeking-public-office-comelec-bars-serge-osmea" target="_blank">Read More</a>
@@ -235,7 +235,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Tenth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Fire hits Inayawan anew, 200 homeless.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/Fire hits Inayawan anew, 200 homeless.png" class="d-block w-100 c-img" alt="Fire hits Inayawan anew, 200 homeless">
                     <div class="carousel-caption d-md-block">
                         <h5>Fire hits Inayawan anew, 200 homeless</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433939/fire-hits-inayawan-anew-200-homeless" target="_blank">Read More</a>
@@ -244,7 +244,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Eleventh Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Residents with water problems to get containers.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/Residents with water problems to get containers.png" class="d-block w-100 c-img" alt="Residents with water problems to get containers">
                     <div class="carousel-caption d-md-block">
                         <h5>Residents with water problems to get containers</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/08/2434377/residents-water-problems-get-containers" target="_blank">Read More</a>
@@ -253,7 +253,7 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Twelfth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Pia slams PhilHealth 18 percent hospital coverage.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/Pia slams PhilHealth 18 percent hospital coverage.png" class="d-block w-100 c-img" alt="Pia slams PhilHealth 18 percent hospital coverage">
                     <div class="carousel-caption d-md-block">
                         <h5>Pia slams PhilHealth 18 percent hospital coverage</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433936/pia-slams-philhealth-18-percent-hospital-coverage" target="_blank">Read More</a>
@@ -262,12 +262,58 @@ if (!isset($_SESSION["user"])) {
 
                 <!-- Thirteenth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/Pia slams PhilHealth 18 percent hospital coverage.png" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <img src="Images/‘Nobody is above the law’.png" class="d-block w-100 c-img" alt=">Mayor Garcia on police misconduct: 'Nobody is above the law'">
                     <div class="carousel-caption d-md-block">
-                        <h5>Pia slams PhilHealth 18 percent hospital coverage</h5>
-                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/06/2433936/pia-slams-philhealth-18-percent-hospital-coverage" target="_blank">Read More</a>
+                        <h5>Mayor Garcia on police misconduct: 'Nobody is above the law'</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/631718/mayor-garcia-on-police-misconduct-nobody-is-above-the-law" target="_blank">Read More</a>
                     </div>
                 </div>
+
+                <!-- Fourteenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/City Hall starts implementing contingencies for dry season.png" class="d-block w-100 c-img" alt="City Hall starts implementing contingencies for dry season">
+                    <div class="carousel-caption d-md-block">
+                        <h5>City Hall starts implementing contingencies for dry season</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.philstar.com/the-freeman/cebu-news/2025/04/09/2434656/city-hall-starts-implementing-contingencies-dry-season" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Fifteenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/The Monday when Cebu City Hall had 'two mayors.'.png" class="d-block w-100 c-img" alt="Top of the Week: The Monday when Cebu City Hall had 'two mayors.'">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Top of the Week: The Monday when Cebu City Hall had 'two mayors.'</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://www.sunstar.com.ph/cebu/top-of-the-week-the-monday-when-cebu-city-hall-had-two-mayors" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Sixteenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Cebu City acts on them with P45.7M projects.png" class="d-block w-100 c-img" alt="Landslide woes in Sirao: Cebu City acts on them with P45.7M projects">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Landslide woes in Sirao: Cebu City acts on them with P45.7M projects</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/628504/landslide-woes-in-sirao-cebu-city-acts-on-them-with-p45-7m-projects" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Seventeenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Release of 'aid to the barangays' starts on Monday .png" class="d-block w-100 c-img" alt="Release of ‘aid to the barangays’ starts on Monday – Raymond">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Release of ‘aid to the barangays’ starts on Monday – Raymond</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/628043/release-of-aid-to-the-barangays-starts-on-monday-raymond" target="_blank">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Eighteenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/City Hall drops case as Rama returns van.png" class="d-block w-100 c-img" alt="Rama carnapping: City Hall drops case as Rama returns van">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Rama carnapping: City Hall drops case as Rama returns van</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/626069/rama-carnapping-city-hall-drops-case-as-rama-returns-van" target="_blank">Read More</a>
+                    </div>
+                </div>
+
 
             </div>
         </div>
