@@ -146,15 +146,8 @@ if (!isset($_SESSION["user"])) {
     
         <!-- Bootstrap Carousel Component -->
         <div id="cebu-city-gov-carousel" class="carousel" data-bs-ride="carousel">
-            <!-- Carousel Indicators for Navigation -->
-            <div class="carousel-indicators hidden">
-                <button type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div>
-    
+        <div id="carousel-numeric-indicators" class="carousel-numeric-indicators"></div>
+
             <!-- Carousel Items -->
             <div class="carousel-inner hidden">
                 <!-- First Carousel Item -->
@@ -201,17 +194,17 @@ if (!isset($_SESSION["user"])) {
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebucity.news/2022/12/14/council-to-city-implement-cash-aid-for-solo-parents/7" target="_blank">Read More</a>
                     </div>
                 </div>
+
+                <!-- Sixth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/Malaysia helps cebu city government.jpeg" class="d-block w-100 c-img" alt="Senior Citizens cash aid">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Malaysia to help Cebu City government in its infrastructure projects</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/623651/malaysia-to-help-cebu-city-government-in-its-infrastructure-projects" target="_blank">Read More</a>
+                    </div>
+                </div>
+
             </div>
-    
-            <!-- Carousel Navigation Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon hidden" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#cebu-city-gov-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon hidden" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
     

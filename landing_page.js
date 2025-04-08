@@ -32,102 +32,82 @@ window.onscroll = function() {
     }
 };
 
-// JAVASCRIPT FOR CAROUSEL
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.getElementById('cebu-city-gov-carousel');
-    const carouselItems = carousel.querySelectorAll('.carousel-item');
-    const indicators = carousel.querySelectorAll('.carousel-indicators button');
-    const prevButton = carousel.querySelector('.carousel-control-prev');
-    const nextButton = carousel.querySelector('.carousel-control-next');
 
-    let currentIndex = 0; // Tracks the current slide
-    let interval; // Holds the auto-slide interval
-    let carouselInitialized = false; // Prevent reinitialization
-
-    // Function to clear all active states
-    const clearActiveStates = () => {
-        carouselItems.forEach((item) => item.classList.remove('active'));
-        indicators.forEach((indicator) => indicator.classList.remove('active'));
-    };
-
-    // Function to update the active slide and indicator
+// FOR CAROUSEL 
+document.addEventListener("DOMContentLoaded", function () {
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    const numericIndicatorContainer = document.getElementById("carousel-numeric-indicators");
+    let currentIndex = 0;
+    let interval;
+    const maxVisible = 5; 
+  
     const updateSlide = (index) => {
-        clearActiveStates(); // Ensure no duplicate active states
-        currentIndex = index;
-        carouselItems[currentIndex].classList.add('active');
-        indicators[currentIndex].classList.add('active');
+      clearActiveStates();
+      currentIndex = index;
+      carouselItems[currentIndex].classList.add("active");
+      renderPagination();
     };
-
-    // Function to change the slide based on direction (1 for next, -1 for prev)
-    const changeSlide = (direction) => {
-        const newIndex = (currentIndex + direction + carouselItems.length) % carouselItems.length;
-        updateSlide(newIndex);
+  
+    const clearActiveStates = () => {
+      carouselItems.forEach((item) => item.classList.remove("active"));
     };
-
-    // Function to restart the auto-slide interval
-    const restartInterval = () => {
-        clearInterval(interval); // Clear the existing interval
-        interval = setInterval(() => changeSlide(1), 5000); // Start a new interval
-    };
-
-    // Function to initialize the carousel
-    const initializeCarousel = () => {
-        if (carouselInitialized) return; // Prevent reinitialization
-        carouselInitialized = true;
-
-        // Clear any existing active states
-        clearActiveStates();
-
-        // Ensure the first slide is active
-        carouselItems[currentIndex].classList.add('active');
-        indicators[currentIndex].classList.add('active');
-
-        // Start the auto-slide interval
-        restartInterval();
-
-        // Add event listeners to indicators
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                clearInterval(interval); // Stop auto-transition for manual interaction
-                updateSlide(index); // Update to the selected slide
-                restartInterval(); // Restart the auto-slide interval
-            });
-        });
-
-        // Add event listeners to navigation buttons
-        nextButton.addEventListener('click', () => {
-            clearInterval(interval); // Stop auto-transition
-            changeSlide(1); // Move to the next slide
-            restartInterval(); // Restart the auto-slide interval
-        });
-
-        prevButton.addEventListener('click', () => {
-            clearInterval(interval); // Stop auto-transition
-            changeSlide(-1); // Move to the previous slide
-            restartInterval(); // Restart the auto-slide interval
-        });
-    };
-
-    // Use Intersection Observer to detect when the carousel is visible
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting && !carouselInitialized) {
-                    initializeCarousel(); // Initialize the carousel when visible
-                    observer.unobserve(carousel); // Stop observing after initialization
-                }
-            });
-        },
-        {
-            root: null, // Viewport is the root
-            threshold: 0.5, // Trigger when at least 50% of the carousel is visible
+  
+    const renderPagination = () => {
+      numericIndicatorContainer.innerHTML = "";
+      const total = carouselItems.length;
+  
+      const createButton = (label, index, isActive = false) => {
+        const btn = document.createElement("button");
+        btn.textContent = label;
+        btn.disabled = label === "...";
+        if (isActive) btn.classList.add("active");
+        if (!btn.disabled) {
+          btn.addEventListener("click", () => {
+            clearInterval(interval);
+            updateSlide(index);
+            restartInterval();
+          });
         }
-    );
-
-    // Observe the carousel element
-    observer.observe(carousel);
-});
-
+        numericIndicatorContainer.appendChild(btn);
+      };
+  
+      if (currentIndex > 0) {
+        createButton("«", currentIndex - 1);
+      }
+  
+      const pageStart = Math.max(0, currentIndex - Math.floor(maxVisible / 2));
+      const pageEnd = Math.min(total, pageStart + maxVisible);
+  
+      if (pageStart > 0) {
+        createButton("1", 0);
+        if (pageStart > 1) createButton("...");
+      }
+  
+      for (let i = pageStart; i < pageEnd; i++) {
+        createButton(i + 1, i, i === currentIndex);
+      }
+  
+      if (pageEnd < total) {
+        if (pageEnd < total - 1) createButton("...");
+        createButton(total, total - 1);
+      }
+  
+      if (currentIndex < total - 1) {
+        createButton("»", currentIndex + 1);
+      }
+    };
+  
+    const restartInterval = () => {
+      interval = setInterval(() => {
+        const nextIndex = (currentIndex + 1) % carouselItems.length;
+        updateSlide(nextIndex);
+      }, 10000);
+    };
+  
+    updateSlide(0);
+    restartInterval();
+  });
+  
 
 // JAVASCRIPT FOR SCROLL ANIMATION WITH ITS VARIATIONS
 const observer = new IntersectionObserver((entries) => {
@@ -152,3 +132,4 @@ hiddenElements2.forEach((el) => observer.observe(el)); // Add each hidden elemen
 // Observe elements with the 'hidden3' class
 const hiddenElements3 = document.querySelectorAll('.hidden3');
 hiddenElements3.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
+

@@ -465,6 +465,32 @@ nav ul li a:target::before {
     margin: 0 auto;
 }
 
+.carousel-numeric-indicators {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+.carousel-numeric-indicators button {
+  background: #0056b3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.carousel-numeric-indicators button.active {
+  background: white;
+  color: #000;
+  border: 1px solid #0056b3;
+}
+
+.carousel-numeric-indicators button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 /* Carousel slide item without transition */
 #cebu-city-gov-carousel .carousel-item {
     transition: none;
