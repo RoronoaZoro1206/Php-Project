@@ -314,6 +314,15 @@ if (!isset($_SESSION["user"])) {
                     </div>
                 </div>
 
+                <!-- Nineteenth Carousel Item -->
+                <div class="carousel-item c-item">
+                    <img src="Images/City Hall drops case as Rama returns van.png" class="d-block w-100 c-img" alt="Rama carnapping: City Hall drops case as Rama returns van">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Rama carnapping: City Hall drops case as Rama returns van</h5>
+                        <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/626069/rama-carnapping-city-hall-drops-case-as-rama-returns-van" target="_blank">Read More</a>
+                    </div>
+                </div>
+
 
             </div>
         </div>
