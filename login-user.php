@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $_SESSION["user"] = $validate_user->get_user_data();
 
-        header("Location: landing_page.php");
+        header("Location: index.php");
         die();
         
     } catch (PDOException $e) {

@@ -33,11 +33,11 @@ if (!isset($_SESSION["user"])) {
             <nav>
             <!-- Logo of Cebu City Government -->
             <div class="logo-wrapper">
-                <a href="landing_page.php">
+                <a href="index.php">
                     <!-- Cebu City Icon -->
                     <img src="Images/Cebu City Icon.png" class="logo2 hidden" alt="Cebu City Header Logo">
                 </a>
-                <a href="landing_page.php">
+                <a href="index.php">
                     <!-- Cebu City Header -->
                     <img src="Images/Cebu City Header.png" class="logo hidden" alt="Header Logo">
                 </a>    
@@ -55,7 +55,7 @@ if (!isset($_SESSION["user"])) {
                 <!-- Navigation Links -->
                 <ul id="nav-links">
                     <li class="hidden">
-                        <a href="landing_page.php">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li class="hidden3">
                         <a href="services.php">Services</a>
@@ -329,12 +329,12 @@ if (!isset($_SESSION["user"])) {
                 </h3>
                 <!-- Links List -->
                 <ul>
-                    <li class="hidden3"><a href="landing_page.html">Home</a></li>
-                    <li class="hidden3"><a href="about-us.html">About Us</a></li>
-                    <li class="hidden3"><a href="services.html">Services</a></li>
-                    <li class="hidden3"><a href="contact-us.html">Transparency and Governance</a></li>
-                    <li class="hidden3"><a href="transparency.html">Events and Announcements</a></li>
-                    <li class="hidden3"><a href="contact-us.html">Contact Us</a></li>
+                    <li class="hidden3"><a href="index.php">Home</a></li>
+                    <li class="hidden3"><a href="about-us.php">About Us</a></li>
+                    <li class="hidden3"><a href="services.php">Services</a></li>
+                    <li class="hidden3"><a href="contact-us.php">Transparency and Governance</a></li>
+                    <li class="hidden3"><a href="transparency.php">Events and Announcements</a></li>
+                    <li class="hidden3"><a href="contact-us.php">Contact Us</a></li>
                 </ul>
             </div>
 
