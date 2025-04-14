@@ -1,113 +1,284 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(120deg,#2980b9, #8e44ad);
+  background: linear-gradient(135deg, #2980b9, #8e44ad, #2c3e50);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
-.center{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.center {
   width: 400px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  opacity: 1;
+  animation: fadeIn 0.6s ease;
 }
-.center h1{
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.center h1 {
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid silver;
-}
-.center form{
-  padding: 0 40px;
-  box-sizing: border-box;
-}
-form .txt_field{
   position: relative;
-  border-bottom: 2px solid #adadad;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.center h1::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #2691d9;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.5s;
+}
+
+.center:hover h1::after {
+  width: 100px;
+}
+
+.center form {
+  padding: 0 5px;
+}
+
+form .txt_field {
+  position: relative;
   margin: 30px 0;
 }
-.txt_field input{
+
+.txt_field input {
   width: 100%;
-  padding: 0 5px;
-  height: 40px;
+  padding: 10px 5px;
+  height: 50px;
   font-size: 16px;
   border: none;
   background: none;
   outline: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
-.txt_field label{
+
+.txt_field input:focus {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(38, 145, 217, 0.1);
+}
+
+.txt_field label {
   position: absolute;
-  top: 50%;
-  left: 5px;
-  color: #adadad;
-  transform: translateY(-50%);
-  font-size: 16px;
+  top: 15px;
+  left: 15px;
+  color: #999;
+  transform-origin: 0 0;
+  transform: translateY(0);
+  transition: all 0.3s ease;
   pointer-events: none;
-  transition: .5s;
 }
-.txt_field span::before{
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  transform: translateY(-120%) scale(0.8);
+  color: #2691d9;
+  font-weight: 500;
+}
+
+.txt_field span::before {
   content: '';
   position: absolute;
-  top: 40px;
+  bottom: 0;
   left: 0;
   width: 0%;
   height: 2px;
   background: #2691d9;
-  transition: .5s;
+  transition: 0.5s;
 }
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label{
-  top: -5px;
-  color: #2691d9;
-}
+
 .txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before{
+.txt_field input:valid ~ span::before {
   width: 100%;
 }
-.pass{
+
+.pass {
   margin: -5px 0 20px 5px;
-  color: #a6a6a6;
+  color: #666;
   cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
 }
-.pass:hover{
+
+.pass:hover {
+  color: #2691d9;
   text-decoration: underline;
 }
-input[type="submit"]{
+
+input[type="submit"] {
   width: 100%;
   height: 50px;
-  border: 1px solid;
+  border: none;
   background: #2691d9;
   border-radius: 25px;
   font-size: 18px;
-  color: #e9f4fb;
-  font-weight: 700;
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
   outline: none;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(38, 145, 217, 0.4);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
-input[type="submit"]:hover{
-  border-color: #2691d9;
-  transition: .5s;
+
+input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
 }
-.signup_link{
-  margin: 30px 0;
+
+input[type="submit"]:hover {
+  background: #1c7ed6;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(38, 145, 217, 0.5);
+}
+
+input[type="submit"]:hover::before {
+  left: 100%;
+}
+
+input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(38, 145, 217, 0.4);
+}
+
+.signup_link {
+  margin: 30px 0 10px;
   text-align: center;
   font-size: 16px;
-  color: #666666;
+  color: #666;
 }
-.signup_link a{
+
+.signup_link a {
   color: #2691d9;
   text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
 }
-.signup_link a:hover{
+
+.signup_link a:hover {
   text-decoration: underline;
+  color: #1c7ed6;
+}
+
+/* Error messages styling */
+.error-message {
+  background-color: rgba(255, 97, 97, 0.1);
+  border-left: 4px solid #ff6161;
+  color: #d32f2f;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Success messages styling */
+.success-message {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 4px solid #4caf50;
+  color: #388e3c;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .center {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
+
+/* Add this to your existing CSS for accessibility */
+input[type="submit"]:focus {
+  box-shadow: 0 0 0 3px rgba(38, 145, 217, 0.5);
+}
+
+a:focus {
+  outline: 2px solid #2691d9;
+  outline-offset: 2px;
 }

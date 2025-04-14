@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $confirm_password = $_POST["confirm_password"];
     $timezone = $_POST["timezone"] ?? 'UTC'; 
 
-    // Get current datetime in user's timezone
+   
     try {
         $dt = new DateTime("now", new DateTimeZone($timezone));
         $user_created = $dt->format('Y-m-d H:i:sP'); 

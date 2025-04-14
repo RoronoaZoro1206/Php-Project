@@ -46,14 +46,14 @@ if (isset($_SESSION["user"])){
           <label>Password</label>
         </div>
 
-        <!-- <div class="pass">Forgot Password?</div> -->
         <input type="submit" value="Login">
         <div class="signup_link">
           Not a member? <a href="register.php">Signup</a>
-          <!-- <p>Forgot your Password? <a href="{% url 'reset_password' %}">Reset Password</a></p>  -->
+          <p>Forgot your Password? <a href="forgot-password.php"> <br> Reset Password</a></p>  
         </div>
       </form>
     </div>
 
   </body>
 </html>
+<script type="type/javascript" src="login.js"></script>

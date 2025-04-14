@@ -64,10 +64,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
       </form>
     </div>
-
-    <script>
-      document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    </script>
-
+    <script type="text/javascript" src="register.js"></script>
   </body>
 </html>
+

@@ -53,3 +53,25 @@ function create_user(object $pdo, string $username, string $email, string $passw
         die("Failed to insert user: " . $e->getMessage());
     }
 }
+
+function getUserByEmail($pdo, $email) {
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE user_email = ?");
+    $stmt->execute([$email]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function saveResetToken($pdo, $email, $token, $expiry) {
+    $stmt = $pdo->prepare("UPDATE users SET user_reset_token = ?, user_token_expiry = ? WHERE user_email = ?");
+    return $stmt->execute([$token, $expiry, $email]);
+}
+
+function getUserByToken($conn, $token) {
+    $stmt = $conn->prepare("SELECT * FROM users WHERE user_reset_token = ?");
+    $stmt->execute([$token]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function updateUserPassword($conn, $userId, $hashedPassword) {
+    $stmt = $conn->prepare("UPDATE users SET password = ?, user_reset_token = NULL, user_token_expiry = NULL WHERE id = ?");
+    return $stmt->execute([$hashedPassword, $userId]);
+}
