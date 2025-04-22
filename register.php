@@ -3,10 +3,10 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
   
-  if (isset($_SESSION["user"])){
-    header("Location: index.php");
-    die();
-  }
+if (isset($_SESSION["user"])){
+  header("Location: index.php");
+  die();
+}
   
 ?>
 
@@ -16,6 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
   <head>
     <meta charset="utf-8">
     <title>Register</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="authentication.css">
   </head>
   <body>

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 function get_user_username(object $pdo, string $username) {
 
-    $query = "SELECT * FROM users WHERE user_username = :username;";
+    $query = "SELECT * FROM users WHERE user_username = :username ORDER BY user_id ASC";
     $statement = $pdo->prepare($query);
 
     $statement->bindParam(":username", $username);
@@ -17,7 +17,7 @@ function get_user_username(object $pdo, string $username) {
 
 function get_user_email(object $pdo, string $email) {
 
-    $query = "SELECT * FROM users WHERE user_email = :email;";
+    $query = "SELECT * FROM users WHERE user_email = :email ORDER BY user_id ASC";
     $statement = $pdo->prepare($query);
 
     $statement->bindParam(":email", $email);
@@ -55,7 +55,7 @@ function create_user(object $pdo, string $username, string $email, string $passw
 }
 
 function getUserByEmail($pdo, $email) {
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE user_email = ?");
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE user_email = ? ORDER BY user_id ASC");
     $stmt->execute([$email]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
@@ -65,13 +65,14 @@ function saveResetToken($pdo, $email, $token, $expiry) {
     return $stmt->execute([$token, $expiry, $email]);
 }
 
-function getUserByToken($conn, $token) {
-    $stmt = $conn->prepare("SELECT * FROM users WHERE user_reset_token = ?");
+
+function getUserByToken($pdo, $token) {
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE user_reset_token = ? ORDER BY user_id ASC");
     $stmt->execute([$token]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function updateUserPassword($conn, $userId, $hashedPassword) {
-    $stmt = $conn->prepare("UPDATE users SET password = ?, user_reset_token = NULL, user_token_expiry = NULL WHERE id = ?");
+function updateUserPassword($pdo, $userId, $hashedPassword) {
+    $stmt = $pdo->prepare("UPDATE users SET user_pwd = ?, user_reset_token = NULL, user_token_expiry = NULL WHERE user_id = ?");
     return $stmt->execute([$hashedPassword, $userId]);
 }
