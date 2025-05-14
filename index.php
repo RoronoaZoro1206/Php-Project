@@ -325,7 +325,7 @@ if (!isset($_SESSION["user"])) {
                 
                 <!-- Twentieth Carousel Item -->
                 <div class="carousel-item c-item">
-                    <img src="Images/BOPK-2025.jpg" class="d-block w-100 c-img" alt="Rama carnapping: City Hall drops case as Rama returns van">
+                    <img src="Images/BOPK-2025.png" class="d-block w-100 c-img" alt="Rama carnapping: City Hall drops case as Rama returns van">
                     <div class="carousel-caption d-md-block">
                         <h5>Election 2025: BOPK dominates Cebu City polls</h5>
                         <a class="btn btn-primary px-4 py-2 fs-5 mt-2 mb-2" href="https://cebudailynews.inquirer.net/637520/election-2025-bopk-dominates-cebu-city-polls" target="_blank">Read More</a>

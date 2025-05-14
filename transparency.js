@@ -1,3 +1,17 @@
+
+window.recentDownloads = {};
+
+// Helper function to prevent multiple downloads from being counted in a short time
+function shouldTrackDownload(pdfName) {
+    const now = new Date().getTime();
+    if (window.recentDownloads[pdfName] && (now - window.recentDownloads[pdfName] < 3000)) {
+        console.log('Skipping duplicate download tracking for', pdfName);
+        return false;
+    }
+    window.recentDownloads[pdfName] = now;
+    return true;
+}
+
 // JAVASCRIPT FOR HAMBURGER ICON IN MEDIA QUERY
 document.addEventListener('DOMContentLoaded', () => {
     // Get references to the hamburger menu and navigation links
@@ -31,7 +45,6 @@ window.onscroll = function() {
         backToTopButton.style.display = "none";
     }
 };
-
 
 // JAVASCRIPT FOR SCROLL ANIMATION WITH ITS VARIATIONS
 const observer = new IntersectionObserver((entries) => {
@@ -119,3 +132,166 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Function to load download counts for all PDFs
+function loadDownloadCounts() {
+    const pdfCards = document.querySelectorAll('.card');
+    
+    pdfCards.forEach(card => {
+        const button = card.querySelector('.open-pdf-modal');
+        if (button) {
+            const pdfSrc = button.getAttribute('data-pdf-src');
+            if (pdfSrc) {
+                const pdfName = pdfSrc.split('/').pop();
+                fetchDownloadCount(pdfName, card);
+            }
+        }
+    });
+}
+
+// Fetch download count for a specific PDF
+function fetchDownloadCount(pdfName, card) {
+    // Add timestamp to prevent caching
+    const timestamp = new Date().getTime();
+    fetch(`track-download.php?pdf=${encodeURIComponent(pdfName)}&nocache=${timestamp}`, {
+        headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Rest of your code remains the same
+        let countDisplay = card.querySelector('.download-count');
+        if (!countDisplay) {
+            countDisplay = document.createElement('div');
+            countDisplay.className = 'download-count';
+            const cardBody = card.querySelector('.card-body') || card;
+            cardBody.appendChild(countDisplay);
+        }
+        
+        let downloadInfo = `<div class="download-header"><i class='bx bx-download'></i> Downloads: <span class="count-number">${data.count}</span></div>`;
+        if (data.last_downloaded) {
+            downloadInfo += `<div class="download-timestamp">Last: ${data.last_downloaded}</div>`;
+        }
+        countDisplay.innerHTML = downloadInfo;
+    })
+    .catch(error => console.error('Error fetching download count:', error));
+}
+
+// Track download and update counter function
+function trackPdfDownload(pdfName, cardSelector) {
+    if (!shouldTrackDownload(pdfName)) {
+        console.log('Skipped duplicate download tracking for:', pdfName);
+        return;
+    }
+    
+    console.log('Tracking download for:', pdfName);
+    
+    // Send tracking event
+    const formData = new FormData();
+    formData.append('pdf', pdfName);
+    
+    fetch('track-download.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log('Download tracked successfully');
+            // Update the count display if we have a card selector
+            if (cardSelector) {
+                const card = typeof cardSelector === 'function' ? cardSelector() : cardSelector;
+                if (card) {
+                    setTimeout(() => fetchDownloadCount(pdfName, card), 500);
+                }
+            }
+        }
+    })
+    .catch(error => console.error('Error tracking download:', error));
+}
+
+// DOWNLOAD TRACKING - MAIN IMPLEMENTATION
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize download counters
+    loadDownloadCounts();
+    
+    // 1. Track main download button clicks
+    document.querySelectorAll('[id^="downloadPdfLink"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const pdfPath = this.getAttribute('href');
+            const pdfName = pdfPath.split('/').pop();
+            
+            const modalId = this.closest('.modal').id;
+            const button = document.querySelector(`[data-bs-target="#${modalId}"]`);
+            const card = button ? button.closest('.card') : null;
+            
+            trackPdfDownload(pdfName, card);
+        });
+    });
+
+    // Add this function at the beginning of your file, right after the shouldTrackDownload function
+    function isCloseButton(element) {
+        // Check if this is a Bootstrap modal close button
+        return (
+            element.classList.contains('close') || 
+            element.classList.contains('btn-close') ||
+            element.getAttribute('data-bs-dismiss') === 'modal' ||
+            element.getAttribute('data-dismiss') === 'modal' ||
+            element.classList.contains('modal-header-close') ||
+            (element.tagName === 'BUTTON' && element.closest('.modal-header')) ||
+            element.closest('[data-bs-dismiss="modal"]') ||
+            element.closest('[data-dismiss="modal"]') ||
+            // Check for the X icon in the modal header
+            (element.textContent === '×' && element.closest('.modal-header')) ||
+            element.classList.contains('btn-close') ||
+            // The specific X button in your modal
+            (element.textContent === '×' && 
+            element.style && 
+            (element.style.position === 'absolute' || 
+            element.closest('[style*="position: absolute"]')))
+        );
+    }
+        
+    // Listen for clicks in toolbar areas that might be download buttons
+    document.addEventListener('click', function(e) {
+        // Target raw svg elements, toolbar buttons, etc.
+        const isDownloadButton = 
+            (e.target.matches('[title="Download"]') || 
+             e.target.matches('[download]') ||
+             e.target.matches('svg path[d*="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"]') || 
+             e.target.classList.contains('download-icon')) || 
+            (e.target.closest('button') && (
+                e.target.closest('button').matches('[title="Download"]') ||
+                e.target.closest('button').matches('[download]') ||
+                e.target.closest('button').classList.contains('download')
+            )) ||
+            (e.target.closest('.pdf-toolbar-download') || e.target.closest('[data-download]'));
+            
+        if (isDownloadButton) {
+            // Find containing modal and associated PDF
+            const modal = e.target.closest('.modal');
+            if (modal) {
+                const iframe = modal.querySelector('iframe');
+                if (iframe) {
+                    const pdfPath = iframe.getAttribute('src');
+                    const pdfName = pdfPath.split('/').pop();
+                    
+                    // Find corresponding card
+                    const button = document.querySelector(`[data-bs-target="#${modal.id}"]`);
+                    const card = button ? button.closest('.card') : null;
+                    
+                    trackPdfDownload(pdfName, card);
+                }
+            }
+        }
+    }, true);
+});
+

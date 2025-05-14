@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 
@@ -409,7 +410,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/MANPOWER-COMPLEMENT-2024-3RD-QUARTER.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink1" href="PDF/MANPOWER-COMPLEMENT-2024-3RD-QUARTER.pdf" class="btn btn-primary" download data-pdf="MANPOWER-COMPLEMENT-2024-3RD-QUARTER.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -431,7 +432,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/MANPOWER-COMPLEMENT-2023-2ND-QUARTER.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink2" href="PDF/MANPOWER-COMPLEMENT-2023-2ND-QUARTER.pdf" class="btn btn-primary" download data-pdf="MANPOWER-COMPLEMENT-2023-2ND-QUARTER.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -453,7 +454,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/MANPOWER COMPLEMENT BUDGET-2023-1ST QUARTER.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink3" href="PDF/MANPOWER COMPLEMENT BUDGET-2023-1ST QUARTER.pdf" class="btn btn-primary" download data-pdf="MANPOWER COMPLEMENT BUDGET-2023-1ST QUARTER.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -474,7 +475,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/MANPOWER-COMPLEMENT-2ND-QUARTER-2022.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink4" href="PDF/MANPOWER-COMPLEMENT-2ND-QUARTER-2022.pdf" class="btn btn-primary" download data-pdf="MANPOWER-COMPLEMENT-2ND-QUARTER-2022.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -495,7 +496,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/2024-Q2 FINANCIAL REPORTS.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink5" href="PDF/2024-Q2 FINANCIAL REPORTS.pdf" class="btn btn-primary" download data-pdf="2024-Q2 FINANCIAL REPORTS.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -516,7 +517,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/2023-2ND QUARTER FINANCIAL REPORTS.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink6" href="PDF/2023-2ND QUARTER FINANCIAL REPORTS.pdf" class="btn btn-primary" download data-pdf="2023-2ND QUARTER FINANCIAL REPORTS.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -537,7 +538,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/2022-4th Quarter Financial Reports.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink7" href="PDF/2022-4th Quarter Financial Reports.pdf" class="btn btn-primary" download data-pdf="2022-4th Quarter Financial Reports.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -558,7 +559,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/2022 – 2nd Quarter Financial Reports.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink8" href="PDF/2022 – 2nd Quarter Financial Reports.pdf" class="btn btn-primary" download data-pdf="2022 – 2nd Quarter Financial Reports.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -579,7 +580,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/FUN-RIDES-AND-CARNIVAL-VER.4.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink9" href="PDF/FUN-RIDES-AND-CARNIVAL-VER.4.pdf" class="btn btn-primary" download data-pdf="FUN-RIDES-AND-CARNIVAL-VER.4.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -600,7 +601,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/PERFORMANCIRCUS-VER.-2.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink10" href="PDF/PERFORMANCIRCUS-VER.-2.pdf" class="btn btn-primary" download data-pdf="PERFORMANCIRCUS-VER.-2.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -621,7 +622,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/Statement of Indebtedness Payments and Balances (SIPB) – Q3.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink11" href="PDF/Statement of Indebtedness Payments and Balances (SIPB) – Q3.pdf" class="btn btn-primary" download data-pdf="Statement of Indebtedness Payments and Balances (SIPB) – Q3.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -642,7 +643,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-footer">
                     <!-- Download Button -->
-                    <a id="downloadPdfLink" href="PDF/CCMC – Rate of Services.pdf" class="btn btn-primary" download>Download PDF</a>
+                    <a id="downloadPdfLink12" href="PDF/CCMC – Rate of Services.pdf" class="btn btn-primary" download data-pdf="CCMC – Rate of Services.pdf">Download PDF</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
