@@ -71,4 +71,60 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
       }
     });
   });
-  
+  //comments
+ const commentButtons = document.querySelectorAll('.comment-btn');
+    const commentList = document.getElementById('commentList');
+    const commentForm = document.getElementById('commentForm');
+    const eventIdInput = document.getElementById('event_id');
+    const parentIdInput = document.getElementById('parent_id');
+
+    commentButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const eventId = this.getAttribute('data-event-id');
+            eventIdInput.value = eventId;
+            parentIdInput.value = ''; 
+            loadComments(eventId);
+        });
+    });
+
+    commentForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log("Submitting comment...");  
+
+    const formData = new FormData(commentForm);
+    fetch("save_comment.php", {
+    method: "POST",
+    body: formData
+})
+.then(res => res.text()) 
+.then(text => {
+    console.log("Raw response:", text); 
+    try {
+        const data = JSON.parse(text);  
+        if (data.success) {
+            loadComments(eventIdInput.value);
+            commentForm.reset();
+            parentIdInput.value = '';
+        } else {
+            alert("Error saving comment: " + (data.error ?? "Unknown"));
+        }
+    } catch (e) {
+        console.error("Failed to parse JSON:", e);
+    }
+});
+
+    function loadComments(eventId) {
+        fetch(`load_comments.php?event_id=${eventId}`)
+            .then(res => res.text())
+            .then(html => commentList.innerHTML = html);
+    }
+
+    commentList.addEventListener('click', function (e) {
+        if (e.target.classList.contains('reply-btn')) {
+            const parentId = e.target.getAttribute('data-id');
+            parentIdInput.value = parentId;
+            document.getElementById('comment').focus();
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    });
+});

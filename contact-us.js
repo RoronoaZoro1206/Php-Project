@@ -1,3 +1,5 @@
+const feedbackForm = document.getElementById('feedbackForm');
+const formResponse = document.getElementById('formResponse');
 document.addEventListener('DOMContentLoaded', () => {
     // Get references to the hamburger menu and navigation links
     const hamburger = document.getElementById('hamburger');
@@ -41,16 +43,51 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove('show'); // Remove 'show' class to hide the element
         }
     });
-  });
+});
   
-  // Observe elements with the 'hidden' class
-  const hiddenElements = document.querySelectorAll('.hidden');
-  hiddenElements.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
+// Observe elements with the 'hidden' class
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
   
-  // Observe elements with the 'hidden2' class
-  const hiddenElements2 = document.querySelectorAll('.hidden2');
-  hiddenElements2.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
+// Observe elements with the 'hidden2' class
+const hiddenElements2 = document.querySelectorAll('.hidden2');
+hiddenElements2.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
   
-  // Observe elements with the 'hidden3' class
-  const hiddenElements3 = document.querySelectorAll('.hidden3');
-  hiddenElements3.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
+// Observe elements with the 'hidden3' class
+const hiddenElements3 = document.querySelectorAll('.hidden3');
+hiddenElements3.forEach((el) => observer.observe(el)); // Add each hidden element to the observer
+
+//Form Submission Handler
+feedbackForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+  
+    if (!feedbackForm.checkValidity()) {
+        feedbackForm.classList.add('was-validated');
+        return;
+    }
+  
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+  
+    try {
+        const response = await fetch('http://localhost:3000/submit-feedback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message }),
+        });
+  
+        const result = await response.json();
+        if (result.success) {
+            formResponse.textContent = result.message;
+            formResponse.className = 'success';
+            feedbackForm.reset();
+            feedbackForm.classList.remove('was-validated');
+        } else {
+            throw new Error(result.message);
+        }
+    } catch (err) {
+        formResponse.textContent = err.message || 'An error occurred.';
+        formResponse.className = 'error';
+    }
+});

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 
 if (!isset($_SESSION["user"])) {
@@ -7,7 +9,6 @@ if (!isset($_SESSION["user"])) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -53,11 +54,11 @@ if (!isset($_SESSION["user"])) {
             <nav>
                 <!-- Logo of Cebu City Government-->
                 <div class="logo-wrapper">
-                  <a href="index.php">
+                  <a href="landing_page.html">
                       <!-- Cebu City Icon -->
                       <img src="Images/Cebu City Icon.png" class="logo2 hidden" alt="Cebu City Header Logo">
                   </a>
-                  <a href="index.php">
+                  <a href="landing_page.html">
                       <!-- Cebu City Header -->
                       <img src="Images/Cebu City Header.png" class="logo hidden" alt="Header Logo">
                   </a>    
@@ -68,25 +69,21 @@ if (!isset($_SESSION["user"])) {
                     <span></span>
                     <span></span>
                     <span></span>
-                    <span></span>
                 </div>
 
                 <!-- Navigation Links -->
                 <ul id="nav-links">
                     <li class="hidden">
-                        <a href="index.php">Home</a>
+                        <a href="landing_page.html">Home</a>
                     </li>
                     <li class="hidden3">
-                        <a href="services.php">Services</a>
+                        <a href="services.html">Services</a>
                     </li>
                     <li class="hidden3">
-                        <a href="transparency.php">Transparency and Governance</a>
+                        <a href="transparency.html">Transparency and Governance</a>
                     </li>
                     <li class="hidden2">
-                        <a href="events.php">Events and Announcements</a>
-                    </li>
-                    <li class="hidden2">
-                        <a href="logout.php" class="logout-button">Logout</a>
+                        <a href="events.html">Events and Announcements</a>
                     </li>
                 </ul>
             </nav>
@@ -242,7 +239,51 @@ if (!isset($_SESSION["user"])) {
                   </div>
                 </div>
               </div>
-        </div>              
+        </div>             
+        
+        <!--Feedback and Inquiries Section-->
+
+        <section class="feedback-section my-5">
+            <div class="container">
+                <h2 class="tab-links mb-4">Feedback and Inquiries</h2>
+                <form id="feedbackForm" class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                        <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary px-4">Submit</button>
+                    </div>
+                    <div id="formResponse" class="mt-3"></div>
+                </form>
+                <!-- Location and Map Section -->
+                 <div class="location-map mt-5">
+                  <h3 class="location-map-title mb-3">Our Location</h3>
+                  <div class="map-container">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.35070575443507!2d123.9013902949751!3d10.292870196807542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99be3eebe64f3%3A0xcff880392e4b9e1c!2sCebu%20City%20Hall!5e0!3m2!1sen!2sph!4v1744026213656!5m2!1sen!2sph"
+                    width="100%"
+                    height="450"
+                    style="border: 0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                  </div>    
+                 </div>
+            </div>
+        </section>
 
         <!-- Footer Section -->
         <footer class="hidden2">
@@ -268,13 +309,9 @@ if (!isset($_SESSION["user"])) {
                     <p class="hidden3">Dr Jose P. Rizal St., Santo Niño</p>
                     <p class="hidden3">6000, Cebu City, Cebu, Philippines</p>
                     <!-- Email -->
-                    <p class="email-id hidden3">
-                      <a href="mailto:cityadmin@cebucity.gov.ph">cityadmin@cebucity.gov.ph</a>
-                    </p>
+                    <p class="email-id hidden3">cityadmin@cebucity.gov.ph</p>
                     <!-- Phone Number -->
-                    <h6 class="fw-bold fs-7 hidden3">
-                      <a href="tel:+6324110100">(+632) 411 0100</a>
-                    </h6>
+                    <h6 class="fw-bold fs-7 hidden3">(+632) 411 0100</h6>
                 </div>
 
                 <!-- Column 3: Quick Links -->
@@ -285,12 +322,12 @@ if (!isset($_SESSION["user"])) {
                     </h3>
                     <!-- Links List -->
                     <ul>
-                      <li class="hidden3"><a href="index.php">Home</a></li>
-                      <li class="hidden3"><a href="about-us.php">About Us</a></li>
-                      <li class="hidden3"><a href="services.php">Services</a></li>
-                      <li class="hidden3"><a href="contact-us.php">Transparency and Governance</a></li>
-                      <li class="hidden3"><a href="transparency.php">Events and Announcements</a></li>
-                      <li class="hidden3"><a href="contact-us.php">Contact Us</a></li>
+                      <li class="hidden3"><a href="landing_page.html">Home</a></li>
+                      <li class="hidden3"><a href="about-us.html">About Us</a></li>
+                      <li class="hidden3"><a href="services.html">Services</a></li>
+                      <li class="hidden3"><a href="contact-us.html">Transparency and Governance</a></li>
+                      <li class="hidden3"><a href="transparency.html">Events and Announcements</a></li>
+                      <li class="hidden3"><a href="contact-us.html">Contact Us</a></li>
                   </ul>
                 </div>
 

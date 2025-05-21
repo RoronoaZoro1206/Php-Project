@@ -231,7 +231,7 @@ nav ul li:hover {
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1; 
     position: relative;
     display: inline-block;
@@ -384,12 +384,6 @@ footer a {
 /* Footer link hover effect */
 footer a:hover {
     transform: scale(1.2); 
-}
-
-footer .email-id a,
-footer h6 a {
-    color: white !important;
-    text-decoration: none;
 }
 
 /* Row styling for flexible layout */
@@ -1180,4 +1174,42 @@ hr {
     }
 }
 
+.feedback-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    border-radius: 15px;
+}
 
+.feedback-section h2 {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+#formResponse {
+    font-weight: 500;
+}
+
+#formResponse.success {
+    color: green;
+}
+
+#formResponse.error {
+    color: red;
+}
+
+.location-map {
+    background-color: #ffffff;
+    padding-top: 30px;
+}
+
+.location-title {
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.map-cointainer iframe {
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
+}
